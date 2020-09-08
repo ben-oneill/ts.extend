@@ -1,11 +1,18 @@
 Package: GARMA
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions for stationary Gaussian ARMA processes and other time-series facilities
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Date: 7 September 2020
+Authors@R: person("Ben", "O'Neill", email = "ben.oneill@hotmail.com", role = c("aut", "cre"))
+Author: Ben O'Neill [aut, cre]
+Maintainer: Ben O'Neill <ben.oneill@hotmail.com>
+Description: This package contains probability and moment functions for stationary Gaussian ARMA processes and the stationary GARMA distribution.
+    The package contains functions to compute the auto-covariance/auto-correlation function for a stationary GaussianARMA process, and functions
+    giving the density, cumulative distribution, or random generation, from a stationary GARMA distribution.  The package also contains functions 
+    to compute the spectral intensity of a time-series vector and perform a permutation-spectrum test.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports: 
+RoxygenNote: 6.1.1
+
