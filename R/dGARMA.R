@@ -90,7 +90,7 @@ dGARMA <- function(x,
     if (sum(MM) == 1) {
       OUT[i] <- dnorm(x     = XX[MM],
                       mean  = CMEAN[MM],
-                      sigma = CVAR[MM,MM],
+                      sd = CVAR[MM,MM],
                       log   = TRUE); }
     if (sum(MM) >  1) {
       OUT[i] <- mvtnorm::dmvnorm(x      = XX[MM],

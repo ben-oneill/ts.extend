@@ -88,9 +88,9 @@ pGARMA <- function(x,
       OUT[i] <- 0;
       warning('All non-conditional elements in row ', i, ' of input are missing (marginal) values --- output probability is set equal to one by convention'); }
     if (sum(MM) == 1) {
-      OUT[i] <- pnorm(x     = XX[MM],
+      OUT[i] <- pnorm(q     = XX[MM],
                       mean  = CMEAN[MM],
-                      sigma = CVAR[MM,MM],
+                      sd    = CVAR[MM,MM],
                       log   = TRUE); }
     if (sum(MM) >  1) {
       OUT[i] <- mvtnorm::pmvnorm(lower  = rep(-Inf, sum(MM)),
