@@ -4,7 +4,7 @@
 \alias{plot.spectrum.test}
 \title{Plot of the Permutation-Spectrum Test}
 \usage{
-\method{plot}{spectrum.test}(test, ggplot = TRUE, print = TRUE)
+\method{plot}{spectrum.test}(test, ggplot = TRUE, print = TRUE, ...)
 }
 \arguments{
 \item{test}{A ```spectrum.test``` object produced by the ```spectrum.test``` function}

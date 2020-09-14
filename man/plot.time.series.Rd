@@ -4,7 +4,14 @@
 \alias{plot.time.series}
 \title{Plot scatterplot matrix of time-series vectors}
 \usage{
-\method{plot}{time.series}(x, ggplot = TRUE, background = TRUE, print = TRUE, user.prompt = TRUE)
+\method{plot}{time.series}(
+  x,
+  ggplot = TRUE,
+  background = TRUE,
+  print = TRUE,
+  user.prompt = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{A vector or matrix of time-series values (if a matrix, each time-series should be one row of the matrix)}

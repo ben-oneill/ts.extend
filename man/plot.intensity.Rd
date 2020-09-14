@@ -4,7 +4,7 @@
 \alias{plot.intensity}
 \title{Plot scatterplot matrix of intensity vectors}
 \usage{
-\method{plot}{intensity}(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE)
+\method{plot}{intensity}(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, ...)
 }
 \arguments{
 \item{x}{A vector or matrix of intensity values (if a matrix, each intensity vector should be one row of the matrix)}

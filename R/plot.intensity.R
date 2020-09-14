@@ -13,7 +13,7 @@
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if intensity vectors is large
 
-plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE) {
+plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, ...) {
 
   #Check inputs
   if (!is.numeric(x))           { stop('Error: Time series input should be numeric') }

@@ -11,7 +11,7 @@
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 
-plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE) {
+plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
   if (is.null(test[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
