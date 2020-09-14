@@ -11,13 +11,13 @@
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 
-plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE, ...) {
+plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
-  if (is.null(test[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
-    x <- test[["x"]] }
-  if (is.null(test[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
-    maxint.sim <- test[["maxint.sim"]] }
+  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
+    x <- x[["x"]] }
+  if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
+    maxint.sim <- x[["maxint.sim"]] }
 
   #Check other inputs
   if (!is.numeric(x)) {
