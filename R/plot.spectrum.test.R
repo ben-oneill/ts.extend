@@ -7,9 +7,10 @@
 #' report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful companion to the
 #' permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
 #'
-#' @param test A ```spectrum.test``` object produced by the ```spectrum.test``` function
+#' @param x A ```spectrum.test``` object produced by the ```spectrum.test``` function
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
+#' @param ...   unused
 
 plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 

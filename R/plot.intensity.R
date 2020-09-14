@@ -12,6 +12,7 @@
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if intensity vectors is large
+#' @param ...   unused
 
 plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, ...) {
 

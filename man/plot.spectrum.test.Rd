@@ -7,11 +7,13 @@
 \method{plot}{spectrum.test}(x, ggplot = TRUE, print = TRUE, ...)
 }
 \arguments{
+\item{x}{A ```spectrum.test``` object produced by the ```spectrum.test``` function}
+
 \item{ggplot}{Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object}
 
 \item{print}{Logical; if ```TRUE``` the scatterplot is printed}
 
-\item{test}{A ```spectrum.test``` object produced by the ```spectrum.test``` function}
+\item{...}{unused}
 }
 \description{
 This function generates a dual plot showing the results of the permutation-spectrum testusing either ```ggplot``` or ```base``` graphics.
