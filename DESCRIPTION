@@ -1,4 +1,4 @@
-Package: GARMA
+Package: ts.extend
 Type: Package
 Title: Functions for stationary Gaussian ARMA processes and other time-series facilities
 Version: 0.1.0
