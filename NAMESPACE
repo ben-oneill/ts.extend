@@ -1,2 +1,4 @@
 exportPattern("^[[:alpha:]]+")
 import(graphics)
+importFrom("stats", "ARMAtoMA", "density", "dnorm", "fft", "pnorm")
+importFrom("utils", "setTxtProgressBar", "txtProgressBar")
