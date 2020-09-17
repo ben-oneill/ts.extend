@@ -78,10 +78,9 @@ ARMA.acf <- function(n,
         VAR <- 1/(1-ar);
         ACF <- ar; }
 
-    #Extend to required lag.max
+    #Extend to required length
     if (n > p+1) {
-      xx     <- rep(0, n-p-1);
-      FILTER <- stats::filter(xx, ar, "recursive", init = rev(ACF));
+      FILTER <- stats::filter(rep(0, n-p-1), ar, "recursive", init = rev(ACF));
       ACF    <- c(ACF, FILTER); }
     ACF <- c(1, ACF[1L:(n-1)]); }
 
