@@ -10,10 +10,10 @@
 #' @param ma Vector of moving-average coefficients
 #' @param corr Logical; if ```TRUE``` the function returns the auto-correlation function; if ```FALSE``` the function returns the auto-covariance function
 
-ARMA.acf <- function(n,
-                     ar      = numeric(0),
-                     ma      = numeric(0),
-                     corr    = FALSE) {
+ARMA.autocov <- function(n,
+                         ar      = numeric(0),
+                         ma      = numeric(0),
+                         corr    = FALSE) {
 
   #Check inputs
   if (!is.numeric(n))            { stop('Error: n should be a positive integer') }
