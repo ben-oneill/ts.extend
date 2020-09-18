@@ -39,7 +39,7 @@ ARMA.var <- function(n,
   cc   <- sum(cond);
 
   #Compute marginal variance matrix
-  ACV <- ARMA.acf(n = n, ar, ma, corr = corr);
+  ACV <- ARMA.autocov(n = n, ar, ma, corr = corr);
   VAR <- matrix(0, nrow = n, ncol = n);
   for (i in 1:n) {
   for (j in 1:n) {
