@@ -91,7 +91,7 @@ pGARMA <- function(x,
       OUT[i] <- pnorm(q     = XX[MM],
                       mean  = CMEAN[MM],
                       sd    = CVAR[MM,MM],
-                      log   = TRUE); }
+                      log.p = TRUE); }
     if (sum(MM) >  1) {
       OUT[i] <- mvtnorm::pmvnorm(lower  = rep(-Inf, sum(MM)),
                                  upper  = XX[MM],
