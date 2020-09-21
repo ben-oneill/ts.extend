@@ -65,13 +65,13 @@ plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, .
 
       #Create plot in ggplot2
       if (n == 1) {
-        PLOT <- ggplot2::ggplot(ggplot2::aes(x = Frequency, y = Intensity), data = PLOTDATA) +
+        PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Frequency", y = "Intensity"), data = PLOTDATA) +
           ggplot2::geom_bar(stat = 'identity', fill = 'blue') +
           ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),
                          plot.subtitle = ggplot2::element_text(hjust = 0.5, face = 'bold')) +
           ggplot2::ggtitle('Intensity Plot') +
           ggplot2::ylab(YLAB); } else {
-            PLOT <- ggplot2::ggplot(ggplot2::aes(x = Frequency, y = Intensity), data = PLOTDATA) +
+            PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Frequency", y = "Intensity"), data = PLOTDATA) +
               ggplot2::geom_bar(stat = 'identity', fill = 'blue') +
               ggplot2::facet_wrap(~ n, labeller = ggplot2::as_labeller(LABELS)) +
               ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),

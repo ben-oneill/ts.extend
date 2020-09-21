@@ -71,15 +71,15 @@ plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, 
 
       #Create plot in ggplot2
       if (B) {
-        PLOT <- ggplot2::ggplot(ggplot2::aes(x = Time, y = Value), data = PLOTDATA) +
-          ggplot2::geom_point(ggplot2::aes(x = Time, y = Value), data = PLOTDATA[,2:3],
+        PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA) +
+          ggplot2::geom_point(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA[,2:3],
                               size = 1, colour = 'grey') +
           ggplot2::geom_line(size = 1, colour = 'blue') +
           ggplot2::facet_wrap(~ n, labeller = ggplot2::as_labeller(LABELS)) +
           ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),
                          plot.subtitle = ggplot2::element_text(hjust = 0.5, face = 'bold')) +
           ggplot2::ggtitle('Time Series Plots'); } else {
-            PLOT <- ggplot2::ggplot(ggplot2::aes(x = Time, y = Value), data = PLOTDATA) +
+            PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA) +
               ggplot2::geom_line(size = 1, colour = 'blue') +
               ggplot2::facet_wrap(~ n, labeller = ggplot2::as_labeller(LABELS)) +
               ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),

@@ -69,15 +69,15 @@ plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
                                   axis.title.y  = ggplot2::element_text(margin = ggplot2::margin(t = 0, r = 6, b = 0, l = 0)));
 
           #Generate plots
-          FIGURE1 <- ggplot2::ggplot(ggplot2::aes(x = Frequency, y = Intensity),
+          FIGURE1 <- ggplot2::ggplot(ggplot2::aes_string(x = "Frequency", y = "Intensity"),
                                      data = data.frame(Frequency = FREQ, Intensity = INT)) +
             ggplot2::geom_bar(stat = 'identity', fill = 'DarkRed') +
-            ggplot2::geom_point(ggplot2::aes(x = Frequency, y = Intensity),
+            ggplot2::geom_point(ggplot2::aes_string(x = "Frequency", y = "Intensity"),
                                 data = data.frame(Frequency = MAXFREQ, Intensity = MAXINT),
                                 colour = 'Red', size = 4) +
             ggplot2::expand_limits(y = c(0, MAXY)) + THEME +
             ggplot2::ylab('Scaled Intensity');
-          FIGURE2 <- ggplot2::ggplot(ggplot2::aes(x = 0, y = MaxIntensity),
+          FIGURE2 <- ggplot2::ggplot(ggplot2::aes_(x = ~0, y =~MaxIntensity),
                                      data = data.frame(MaxIntensity = maxint.sim)) +
             ggplot2::geom_violin(fill = 'orange', draw_quantiles = c(0.25, 0.5, 0.75)) +
             ggplot2::annotate('point', x = 0, y = MAXINT, colour = 'red', size = 4) +
