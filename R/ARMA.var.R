@@ -7,7 +7,7 @@
 #' characteristic polynomial with roots outside the unit circle.
 #'
 #' @param n Positive integer giving the number of values in the time-series (output variance matrix is an n x n matrix)
-#' @param condvals Either a single value ```NA``` or a numeric vector with ```m``` elements; numeric entries are conditioning values for the generated vector
+#' @param condvals Either a single value ```NA``` or a numeric vector with ```n``` elements; numeric entries are conditioning values for the generated vector
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
 #' @param corr Logical; if ```TRUE``` the function returns the correlation matrix; if ```FALSE``` the function returns the covariance matrix
@@ -39,7 +39,7 @@ ARMA.var <- function(n,
   cc   <- sum(cond);
 
   #Compute marginal variance matrix
-  ACV <- ARMA.acf(n = n, ar, ma, corr = corr);
+  ACV <- ARMA.autocov(n = n, ar, ma, corr = corr);
   VAR <- matrix(0, nrow = n, ncol = n);
   for (i in 1:n) {
   for (j in 1:n) {

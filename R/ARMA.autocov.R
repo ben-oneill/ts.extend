@@ -1,20 +1,19 @@
 #' Auto-covariance/auto-correlation function for the stationary ARMA model
 #'
 #' This function computes a vector of output values from the auto-covariance/auto-correlation function for a stationary auto-regressive
-#' moving-average (ARMA) model.  The user specifies the matrix size ```n``` and the function returns a vector of auto-covariance/
+#' moving-average (ARMA) model.  The user specifies the vector size ```n``` and the function returns a vector of auto-covariance/
 #' auto-correlation values at all lags ```Lag[0], ... , Lag[n-1]```.  The function requires the model to be stationary, which means that
 #' the vector of auto-regression coefficients must give an auto-regressive characteristic polynomial with roots outside the unit circle.
-#' This function is adapted from the function ```ARMAacf``` in the ```stats``` package.
 #'
-#' @param n Positive integer giving the number of consecutive values in the time-series (output variance matrix is a vector of length ```n````)
+#' @param n Positive integer giving the number of consecutive values in the time-series (output is a vector of length ```n```)
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
 #' @param corr Logical; if ```TRUE``` the function returns the auto-correlation function; if ```FALSE``` the function returns the auto-covariance function
 
-ARMA.acf <- function(n,
-                     ar      = numeric(0),
-                     ma      = numeric(0),
-                     corr    = FALSE) {
+ARMA.autocov <- function(n,
+                         ar      = numeric(0),
+                         ma      = numeric(0),
+                         corr    = FALSE) {
 
   #Check inputs
   if (!is.numeric(n))            { stop('Error: n should be a positive integer') }
@@ -57,31 +56,31 @@ ARMA.acf <- function(n,
       if (r > p) { ar <- c(ar, rep(0, r-p));
       p  <- r; }
 
-      #Construct intermediate matrix A
+      #Construct linear equations for ACF (A %*% ACF = b)
       AA <- c(1, -ar);
       A  <- matrix(0, nrow = p+1L, ncol = 2*p+1L);
       for (i in 1L:nrow(A)) {
         for (k in 0L:p)       {
           A[i,i+k] <- AA[k+1]; } }
       A[, 1L:p] <- A[, 1L:p] + A[, (2*p+1):(p+2)];
-      rhs <- c(1, rep(0, p));
+      A <- A[rev(1:(p+1)), rev(1:(p+1))];
+      b <- c(1, rep(0, p));
 
       if (q > 0) {
         psi   <- c(1, ARMAtoMA(ar, ma, q));
         theta <- c(1, ma, rep(0, q+1));
-        for (k in 1L+0L:q) { rhs[k] <- sum(psi*theta[k+0L:q]); } }
+        for (k in 1:(q+1)) { b[k] <- sum(psi*theta[k:(q+k)]); } }
 
       #Compute ACF and VAR
-      ACF <- solve(A[1L+p:0L, 1L+p:0L], rhs);
+      ACF <- solve(A, b);
       VAR <- ACF[1];
       ACF <- ACF[-1L]/VAR; } else {
         VAR <- 1/(1-ar);
         ACF <- ar; }
 
-    #Extend to required lag.max
+    #Extend to required length
     if (n > p+1) {
-      xx     <- rep(0, n-p-1);
-      FILTER <- stats::filter(xx, ar, "recursive", init = rev(ACF));
+      FILTER <- stats::filter(rep(0, n-p-1), ar, "recursive", init = rev(ACF));
       ACF    <- c(ACF, FILTER); }
     ACF <- c(1, ACF[1L:(n-1)]); }
 
