@@ -11,14 +11,22 @@
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param ...   unused
+#' @examples
+#'
+#' data(garma)
+#'
+#' #Show the intensity of a time-series vector
+#' TEST <- spectrum.test(SERIES1, sims=100)
+#' TEST$x <- SERIES1
+#' plot(TEST)
 
 plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
-  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
-    x <- x[["x"]] }
   if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
     maxint.sim <- x[["maxint.sim"]] }
+  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
+    x <- x[["x"]] }
 
   #Check other inputs
   if (!is.numeric(x)) {
