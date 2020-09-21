@@ -93,12 +93,13 @@ pGARMA <- function(x,
                       sd    = CVAR[MM,MM],
                       log.p = TRUE); }
     if (sum(MM) >  1) {
+      stopifnot("mvtnorm packaged required for multivariate features."=requireNamespace('mvtnorm', quietly=TRUE))
       OUT[i] <- mvtnorm::pmvnorm(lower  = rep(-Inf, sum(MM)),
                                  upper  = XX[MM],
                                  mean   = CMEAN[MM],
                                  sigma  = CVAR[MM, MM],
                                  abseps = 10^(-6),
-                                 algorithm = GenzBretz());
+                                 algorithm = mvtnorm::GenzBretz());
       OUT[i] <- log(OUT[i]); } }
 
   #Add labels
