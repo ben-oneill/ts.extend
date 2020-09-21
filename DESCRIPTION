@@ -16,5 +16,7 @@ LazyData: true
 Imports: 
   graphics
 Suggests:
-  ggplot2
+  ggplot2,
+  gridExtra,
+  mvtnorm
 RoxygenNote: 7.1.1
