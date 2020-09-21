@@ -100,7 +100,7 @@ plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
     on.exit(par(OLDPAR));
 
     #Enable the device
-    win.metafile();
+    dev.new();
     dev.control('enable');
 
     #Create layout for plot

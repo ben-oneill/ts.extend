@@ -88,7 +88,7 @@ plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, .
     on.exit(par(OLDPAR));
 
     #Enable the device
-    win.metafile();
+    dev.new();
     dev.control('enable');
 
     #Create layout for plot
