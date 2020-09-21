@@ -14,7 +14,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
-  graphics
+  graphics,
+  grDevices
 Suggests:
   ggplot2,
   gridExtra,
