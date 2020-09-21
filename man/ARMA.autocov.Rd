@@ -21,3 +21,12 @@ moving-average (ARMA) model.  The user specifies the vector size ```n``` and the
 auto-correlation values at all lags ```Lag[0], ... , Lag[n-1]```.  The function requires the model to be stationary, which means that
 the vector of auto-regression coefficients must give an auto-regressive characteristic polynomial with roots outside the unit circle.
 }
+\examples{
+
+data(garma)
+
+AR <- c(0.8, -0.2)
+MA <- c(0.6,  0.3)
+#Compute the auto-correlation function
+ARMA.autocov(n = 6, ar = AR, ma = MA, corr = TRUE)
+}

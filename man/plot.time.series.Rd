@@ -24,7 +24,12 @@
 
 \item{user.prompt}{Logical; if ```TRUE``` the user will be prompted for choices when the number if time-series is large}
 
-\item{...}{unused}
+\item{...}{unused
+
+#@examples
+
+data(garma)
+plot(SERIES)}
 }
 \description{
 This is a custom plot function that operates on objects of class ```time.series``` (which is the output generated from the ```rGARMA```

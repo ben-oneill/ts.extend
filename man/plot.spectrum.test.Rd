@@ -23,3 +23,12 @@ vector and the simulated null distribution of the maximum scaled intensity under
 report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful companion to the
 permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
 }
+\examples{
+
+data(garma)
+
+#Show the intensity of a time-series vector
+TEST <- spectrum.test(SERIES1, sims=100)
+TEST$x <- SERIES1
+plot(TEST)
+}

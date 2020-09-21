@@ -36,3 +36,19 @@ distribution with the specified parameters.  By default the function generates f
 conditional values in the ```condvals``` vector to generate from the associated conditional distribution (non-conditional values in this
 vector are given as ```NA```).
 }
+\examples{
+#Set the model parameters
+AR <- c(0.8, -0.2)
+MA <- c(0.6,  0.3)
+#Generate random time-series from the GARMA distribution
+SERIES <- rGARMA(n = 16, m = 30, ar = AR, ma = MA)
+
+#Set the conditional values
+CONDVALS     <- rep(NA, 30)
+CONDVALS[1]  <- -4
+CONDVALS[12] <-  0
+CONDVALS[30] <-  4
+
+#Generate and plot random time-series from the GARMA distribution
+SERIES.COND <- rGARMA(n = 16, m = 30, ar = AR, ma = MA, condvals = CONDVALS)
+}

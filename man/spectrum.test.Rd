@@ -21,3 +21,10 @@ of the observed time-series vector.  The p-value for the test is the probability
 large as the observed value under the null distribution of exchangeability.  The null distribution for the test is simulated by applying
 random permutations to the observed time-series.  The number of simulations is controlled by the ```sims``` parameter.
 }
+\examples{
+
+data(garma)
+
+#Show the intensity of a time-series vector
+spectrum.test(SERIES1, sims=100)
+}

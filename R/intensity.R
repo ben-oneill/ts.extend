@@ -10,6 +10,11 @@
 #' @param centred An alternative name for the ```centered``` input
 #' @param scaled Logical; if ```TRUE``` the intensity measure is scaled so that its norm is equal to the number of values in the time-series
 #' @param nyquist Logical; if ```TRUE``` the intensity vector is reduces for real time-series vectors to limit it to frequencies in the Nyquist range
+#'
+#' @examples
+#'
+#' data(garma)
+#' intensity(SERIES1)
 
 intensity <- function(x, centered = TRUE, centred = centered, scaled = TRUE, nyquist = TRUE) {
 

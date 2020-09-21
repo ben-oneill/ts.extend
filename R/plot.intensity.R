@@ -13,7 +13,12 @@
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if intensity vectors is large
 #' @param ...   unused
-
+#'
+#' @examples
+#'
+#' data(garma)
+#' INT     <- intensity(SERIES1)
+#' plot(INT)
 plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, ...) {
 
   #Check inputs

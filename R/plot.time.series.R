@@ -15,7 +15,12 @@
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if time-series is large
 #' @param ...   unused
-
+#'
+#' #@examples
+#'
+#' data(garma)
+#' plot(SERIES)
+#'
 plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, user.prompt = TRUE, ...) {
 
   #Check inputs

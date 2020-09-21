@@ -29,3 +29,8 @@ whether it is to be centered and/or scaled.  Centering subtracts the sample mean
 sets the intensity of the signal to zero at the zero frequency.  Scaling scales the intensity so the that norm of the intensity vector is equal
 to the number of values in the time-series.
 }
+\examples{
+
+data(garma)
+intensity(SERIES1)
+}

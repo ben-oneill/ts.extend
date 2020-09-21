@@ -13,7 +13,14 @@
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
 #' @param log Logical; if ```TRUE``` the function returns the log-probability; if ```FALSE``` the function returns the probability
-
+#'
+#' data(garma)
+#' AR <- c(0.8, -0.2)
+#' MA <- c(0.6,  0.3)
+#'
+#' #Compute the cumulative probability of the GARMA output
+#' (PROBS <- pGARMA(SERIES, ar = AR, ma = MA))
+#'
 pGARMA <- function(x,
                    cond     = FALSE,
                    mean     = 0,
