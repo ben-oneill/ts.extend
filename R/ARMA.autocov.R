@@ -9,6 +9,15 @@
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
 #' @param corr Logical; if ```TRUE``` the function returns the auto-correlation function; if ```FALSE``` the function returns the auto-covariance function
+#'
+#' @examples
+#'
+#' data(garma)
+#'
+#' AR <- c(0.8, -0.2)
+#' MA <- c(0.6,  0.3)
+#' #Compute the auto-correlation function
+#' ARMA.autocov(n = 6, ar = AR, ma = MA, corr = TRUE)
 
 ARMA.autocov <- function(n,
                          ar      = numeric(0),

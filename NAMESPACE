@@ -1,1 +1,10 @@
 exportPattern("^[[:alpha:]]+")
+import(graphics)
+importFrom("grDevices", "dev.control", "dev.new", "dev.off",
+               "recordPlot")
+importFrom("stats", "ARMAtoMA", "density", "dnorm", "fft", "pnorm")
+importFrom("utils", "setTxtProgressBar", "txtProgressBar")
+S3method(plot, intensity)
+S3method(plot, spectrum.test)
+S3method(plot, time.series)
+

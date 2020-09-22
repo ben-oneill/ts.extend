@@ -13,6 +13,22 @@
 #' @param errorvar The error variance parameter
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
+#'
+#' @examples
+#' #Set the model parameters
+#' AR <- c(0.8, -0.2)
+#' MA <- c(0.6,  0.3)
+#' #Generate random time-series from the GARMA distribution
+#' SERIES <- rGARMA(n = 16, m = 30, ar = AR, ma = MA)
+#'
+#' #Set the conditional values
+#' CONDVALS     <- rep(NA, 30)
+#' CONDVALS[1]  <- -4
+#' CONDVALS[12] <-  0
+#' CONDVALS[30] <-  4
+#'
+#' #Generate and plot random time-series from the GARMA distribution
+#' SERIES.COND <- rGARMA(n = 16, m = 30, ar = AR, ma = MA, condvals = CONDVALS)
 
 rGARMA <- function(n,
                    m,

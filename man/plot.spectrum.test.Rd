@@ -4,14 +4,16 @@
 \alias{plot.spectrum.test}
 \title{Plot of the Permutation-Spectrum Test}
 \usage{
-\method{plot}{spectrum.test}(test, ggplot = TRUE, print = TRUE)
+\method{plot}{spectrum.test}(x, ggplot = TRUE, print = TRUE, ...)
 }
 \arguments{
-\item{test}{A ```spectrum.test``` object produced by the ```spectrum.test``` function}
+\item{x}{A ```spectrum.test``` object produced by the ```spectrum.test``` function}
 
 \item{ggplot}{Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object}
 
 \item{print}{Logical; if ```TRUE``` the scatterplot is printed}
+
+\item{...}{unused}
 }
 \description{
 This function generates a dual plot showing the results of the permutation-spectrum testusing either ```ggplot``` or ```base``` graphics.
@@ -20,4 +22,13 @@ test object produced by the ```spectrum.test``` object.  The function produces a
 vector and the simulated null distribution of the maximum scaled intensity under the null hypothesis of an IID vector.  The plots also
 report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful companion to the
 permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
+}
+\examples{
+
+data(garma)
+
+#Show the intensity of a time-series vector
+TEST <- spectrum.test(SERIES1, sims=100)
+TEST$x <- SERIES1
+plot(TEST)
 }

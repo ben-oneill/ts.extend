@@ -27,7 +27,14 @@ pGARMA(
 
 \item{ma}{Vector of moving-average coefficients}
 
-\item{log}{Logical; if ```TRUE``` the function returns the log-probability; if ```FALSE``` the function returns the probability}
+\item{log}{Logical; if ```TRUE``` the function returns the log-probability; if ```FALSE``` the function returns the probability
+
+data(garma)
+AR <- c(0.8, -0.2)
+MA <- c(0.6,  0.3)
+
+#Compute the cumulative probability of the GARMA output
+(PROBS <- pGARMA(SERIES, ar = AR, ma = MA))}
 }
 \description{
 This function computes the cumulative distribution function from the stationary Gaussian auto-regressive moving-average (GARMA) distribution.

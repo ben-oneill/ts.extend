@@ -14,8 +14,14 @@
 #' @param background Logical; if ```TRUE``` then each ```ggplot``` scatterplot will include background points for all the time-series vectors
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if time-series is large
-
-plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, user.prompt = TRUE) {
+#' @param ...   unused
+#'
+#' #@examples
+#'
+#' data(garma)
+#' plot(SERIES)
+#'
+plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, user.prompt = TRUE, ...) {
 
   #Check inputs
   if (!is.numeric(x))           { stop('Error: Time series input should be numeric') }
@@ -70,15 +76,15 @@ plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, 
 
       #Create plot in ggplot2
       if (B) {
-        PLOT <- ggplot2::ggplot(ggplot2::aes(x = Time, y = Value), data = PLOTDATA) +
-          ggplot2::geom_point(ggplot2::aes(x = Time, y = Value), data = PLOTDATA[,2:3],
+        PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA) +
+          ggplot2::geom_point(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA[,2:3],
                               size = 1, colour = 'grey') +
           ggplot2::geom_line(size = 1, colour = 'blue') +
           ggplot2::facet_wrap(~ n, labeller = ggplot2::as_labeller(LABELS)) +
           ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),
                          plot.subtitle = ggplot2::element_text(hjust = 0.5, face = 'bold')) +
           ggplot2::ggtitle('Time Series Plots'); } else {
-            PLOT <- ggplot2::ggplot(ggplot2::aes(x = Time, y = Value), data = PLOTDATA) +
+            PLOT <- ggplot2::ggplot(ggplot2::aes_string(x = "Time", y = "Value"), data = PLOTDATA) +
               ggplot2::geom_line(size = 1, colour = 'blue') +
               ggplot2::facet_wrap(~ n, labeller = ggplot2::as_labeller(LABELS)) +
               ggplot2::theme(plot.title    = ggplot2::element_text(hjust = 0.5, size = 14, face = 'bold'),
@@ -94,7 +100,7 @@ plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, 
     on.exit(par(OLDPAR));
 
     #Enable the device
-    win.metafile();
+    dev.new();
     dev.control('enable');
 
     #Create layout for plot

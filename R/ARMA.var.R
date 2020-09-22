@@ -32,9 +32,9 @@ ARMA.var <- function(n,
   if (!is.vector(condvals))      { stop('Error: condvals must be a conditioning vector') }
   if (length(condvals) == 1) {
     if (is.na(condvals))       {
-      condvals <- as.numeric(rep(NA, m)); } }
+      condvals <- as.numeric(rep(NA, n)); } }
   mm   <- length(condvals);
-  if (mm != m)                   { stop('Error: condvals must have length m') }
+  if (mm != n)                   { stop('Error: condvals must have length n') }
   cond <- !is.na(condvals);
   cc   <- sum(cond);
 
@@ -50,7 +50,7 @@ ARMA.var <- function(n,
   #Compute conditional variance matrix
   if (cc == 0) {
     CVAR   <- VAR; }
-  if ((cc > 0) & (cc < m)) {
+  if ((cc > 0) & (cc < n)) {
     VAR11  <- VAR[!cond, !cond, drop = FALSE];
     VAR12  <- VAR[!cond,  cond, drop = FALSE];
     VAR21  <- VAR[ cond, !cond, drop = FALSE];

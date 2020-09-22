@@ -10,7 +10,13 @@
 #' @param x A vector of time-series values (must have at least two data points)
 #' @param sims Positive integer for the number of simulations to perform in the test
 #' @param progress Logical; if ```TRUE``` the function uses a progress bar to track its simulations
-
+#'
+#' @examples
+#'
+#' data(garma)
+#'
+#' #Show the intensity of a time-series vector
+#' spectrum.test(SERIES1, sims=100)
 spectrum.test <- function(x = NULL, sims = 10^6, progress = TRUE) {
 
   #Check data inputs
@@ -68,6 +74,6 @@ spectrum.test <- function(x = NULL, sims = 10^6, progress = TRUE) {
                       null.value = null.value, alternative = alternative,
                       sample.size = n, sims = sims, maxint.sim = MAXINT.SIM,
                       estimate = estimate, statistic = statistic, p.value = p.value);
-  class(TEST) <- "htest";
+  class(TEST) <- c("spectrum.test", "htest");
   TEST; }
 

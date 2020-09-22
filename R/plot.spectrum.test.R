@@ -7,17 +7,26 @@
 #' report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful companion to the
 #' permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
 #'
-#' @param test A ```spectrum.test``` object produced by the ```spectrum.test``` function
+#' @param x A ```spectrum.test``` object produced by the ```spectrum.test``` function
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
+#' @param ...   unused
+#' @examples
+#'
+#' data(garma)
+#'
+#' #Show the intensity of a time-series vector
+#' TEST <- spectrum.test(SERIES1, sims=100)
+#' TEST$x <- SERIES1
+#' plot(TEST)
 
-plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE) {
+plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
-  if (is.null(test[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
-    x <- test[["x"]] }
-  if (is.null(test[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
-    maxint.sim <- test[["maxint.sim"]] }
+  if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
+    maxint.sim <- x[["maxint.sim"]] }
+  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
+    x <- x[["x"]] }
 
   #Check other inputs
   if (!is.numeric(x)) {
@@ -68,15 +77,15 @@ plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE) {
                                   axis.title.y  = ggplot2::element_text(margin = ggplot2::margin(t = 0, r = 6, b = 0, l = 0)));
 
           #Generate plots
-          FIGURE1 <- ggplot2::ggplot(ggplot2::aes(x = Frequency, y = Intensity),
+          FIGURE1 <- ggplot2::ggplot(ggplot2::aes_string(x = "Frequency", y = "Intensity"),
                                      data = data.frame(Frequency = FREQ, Intensity = INT)) +
             ggplot2::geom_bar(stat = 'identity', fill = 'DarkRed') +
-            ggplot2::geom_point(ggplot2::aes(x = Frequency, y = Intensity),
+            ggplot2::geom_point(ggplot2::aes_string(x = "Frequency", y = "Intensity"),
                                 data = data.frame(Frequency = MAXFREQ, Intensity = MAXINT),
                                 colour = 'Red', size = 4) +
             ggplot2::expand_limits(y = c(0, MAXY)) + THEME +
             ggplot2::ylab('Scaled Intensity');
-          FIGURE2 <- ggplot2::ggplot(ggplot2::aes(x = 0, y = MaxIntensity),
+          FIGURE2 <- ggplot2::ggplot(ggplot2::aes_(x = ~0, y =~MaxIntensity),
                                      data = data.frame(MaxIntensity = maxint.sim)) +
             ggplot2::geom_violin(fill = 'orange', draw_quantiles = c(0.25, 0.5, 0.75)) +
             ggplot2::annotate('point', x = 0, y = MAXINT, colour = 'red', size = 4) +
@@ -99,7 +108,7 @@ plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE) {
     on.exit(par(OLDPAR));
 
     #Enable the device
-    win.metafile();
+    dev.new();
     dev.control('enable');
 
     #Create layout for plot

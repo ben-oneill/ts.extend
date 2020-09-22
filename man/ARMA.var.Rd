@@ -15,7 +15,7 @@ ARMA.var(
 \arguments{
 \item{n}{Positive integer giving the number of values in the time-series (output variance matrix is an n x n matrix)}
 
-\item{condvals}{Either a single value ```NA``` or a numeric vector with ```m``` elements; numeric entries are conditioning values for the generated vector}
+\item{condvals}{Either a single value ```NA``` or a numeric vector with ```n``` elements; numeric entries are conditioning values for the generated vector}
 
 \item{ar}{Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)}
 

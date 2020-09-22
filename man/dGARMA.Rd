@@ -36,3 +36,11 @@ function returns the vector of cumulative probabilities corresponding to the inp
 the marginal GARMA distribution, but the user may give conditioning indicators in the ```cond``` vector to compute the conditional density where
 some of the elements in the input vectors are conditioning values.
 }
+\examples{
+data(garma)
+AR <- c(0.8, -0.2)
+MA <- c(0.6,  0.3)
+
+#Compute the density of the GARMA output
+(DENSITY <- dGARMA(SERIES, ar = AR, ma = MA))
+}

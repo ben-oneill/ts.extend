@@ -4,7 +4,7 @@
 \alias{plot.intensity}
 \title{Plot scatterplot matrix of intensity vectors}
 \usage{
-\method{plot}{intensity}(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE)
+\method{plot}{intensity}(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, ...)
 }
 \arguments{
 \item{x}{A vector or matrix of intensity values (if a matrix, each intensity vector should be one row of the matrix)}
@@ -14,6 +14,8 @@
 \item{print}{Logical; if ```TRUE``` the scatterplot is printed}
 
 \item{user.prompt}{Logical; if ```TRUE``` the user will be prompted for choices when the number if intensity vectors is large}
+
+\item{...}{unused}
 }
 \description{
 This is a custom plot function that operates on objects of class ```intensity``` (which is the output generated from the ```intensity```
@@ -23,4 +25,10 @@ generates a scatterplot matrix showing each of the intensity barplots.  The user
 Since the function generates a scatterplot of intensity plots, there are certain limits in the output.  If the user attempts to generate
 the plot for a time-series matrix with more than 36 intensity vectors, the user will be prompted to continue.  The prompts can be removed
 in the arguments of the function.
+}
+\examples{
+
+data(garma)
+INT     <- intensity(SERIES1)
+plot(INT)
 }
