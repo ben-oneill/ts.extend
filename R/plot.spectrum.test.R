@@ -1,13 +1,12 @@
 #' Plot of the Permutation-Spectrum Test
 #'
 #' This function generates a dual plot showing the results of the permutation-spectrum testusing either ```ggplot``` or ```base``` graphics.
-#' The user must input the time-series vector ```x``` and either a vector of simulated values of the maximum scaled intensity, or an entire
-#' test object produced by the ```spectrum.test``` object.  The function produces a dual plot showing the scaled intensity of the time-series
-#' vector and the simulated null distribution of the maximum scaled intensity under the null hypothesis of an IID vector.  The plots also
-#' report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful companion to the
-#' permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
+#' The user must input a test object produced by the ```spectrum.test``` function.  The function produces a dual plot showing the scaled intensity 
+#' of the time-series vector and the simulated null distribution of the maximum scaled intensity under the null hypothesis of an IID vector.
+#' The plots also report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful
+#' companion to the permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
 #'
-#' @param x A ```spectrum.test``` object produced by the ```spectrum.test``` function
+#' @param test A ```spectrum.test``` object produced by the ```spectrum.test``` function
 #' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
 #' @param print Logical; if ```TRUE``` the scatterplot is printed
 #' @param ...   unused
@@ -20,13 +19,13 @@
 #' TEST$x <- SERIES1
 #' plot(TEST)
 
-plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
+plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
-  if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
-    maxint.sim <- x[["maxint.sim"]] }
-  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
-    x <- x[["x"]] }
+  if (is.null(test[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
+    maxint.sim <- test[["maxint.sim"]] }
+  if (is.null(test[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
+    x <- test[["x"]] }
 
   #Check other inputs
   if (!is.numeric(x)) {
