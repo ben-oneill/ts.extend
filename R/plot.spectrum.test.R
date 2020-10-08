@@ -1,7 +1,7 @@
 #' Plot of the Permutation-Spectrum Test
 #'
 #' This function generates a dual plot showing the results of the permutation-spectrum testusing either ```ggplot``` or ```base``` graphics.
-#' The user must input a test object produced by the ```spectrum.test``` function.  The function produces a dual plot showing the scaled intensity 
+#' The user must input a test object produced by the ```spectrum.test``` function.  The function produces a dual plot showing the scaled intensity
 #' of the time-series vector and the simulated null distribution of the maximum scaled intensity under the null hypothesis of an IID vector.
 #' The plots also report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful
 #' companion to the permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
@@ -19,7 +19,7 @@
 #' TEST$x <- SERIES1
 #' plot(TEST)
 
-plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE, ...) {
+plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
   if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
