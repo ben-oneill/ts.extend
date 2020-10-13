@@ -70,7 +70,7 @@ spectrum.test <- function(x = NULL, sims = 10^6, progress = TRUE) {
   attr(p.value, "names") <- NULL;
 
   #Create htest object
-  TEST        <- list(method = method, data.name = data.name,
+  TEST        <- list(method = method, data.name = data.name, x = x,
                       null.value = null.value, alternative = alternative,
                       sample.size = n, sims = sims, maxint.sim = MAXINT.SIM,
                       estimate = estimate, statistic = statistic, p.value = p.value);
