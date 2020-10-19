@@ -20,8 +20,10 @@
 
 plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
+  test <- x
+
   #Check test input
-  if (is.null(x[["x"]]))       { stop('Error: test object should contain a time-series vector x') } else { 
+  if (is.null(x[["x"]]))       { stop('Error: test object should contain a time-series vector x') } else {
     x <- x[["x"]] }
   if (is.null(test[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
     maxint.sim <- test[["maxint.sim"]] }
