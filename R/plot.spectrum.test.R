@@ -15,17 +15,16 @@
 #' data(garma)
 #'
 #' #Show the intensity of a time-series vector
-#' TEST <- spectrum.test(SERIES1, sims=100)
-#' TEST$x <- SERIES1
+#' TEST <- spectrum.test(SERIES1, sims = 100)
 #' plot(TEST)
 
-plot.spectrum.test <- function(test, ggplot = TRUE, print = TRUE, ...) {
+plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Check test input
-  if (is.null(x[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
-    maxint.sim <- x[["maxint.sim"]] }
-  if (is.null(x[["x"]]))          { stop('Error: test object should contain a time-series vector x') } else {
+  if (is.null(x[["x"]]))       { stop('Error: test object should contain a time-series vector x') } else { 
     x <- x[["x"]] }
+  if (is.null(test[["maxint.sim"]])) { stop('Error: test object should contain simulated intensity values in maxint.sim') } else {
+    maxint.sim <- test[["maxint.sim"]] }
 
   #Check other inputs
   if (!is.numeric(x)) {
