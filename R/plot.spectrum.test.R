@@ -61,7 +61,7 @@ plot.spectrum.test <- function(x, ggplot = TRUE, print = TRUE, ...) {
 
   #Set plot title and label
   TITLE <- paste0('Permutation Spectrum Plot \n (Maximum Scaled Intensity = ', round(MAXINT, 4),
-                  ', p-value = ', round(p.value, digits = 4), ')');
+                  ', p-value = ', sprintf('%.4f', p.value), ')');
   LABEL <- paste0('Simulated Density (',
                   formatC(sims, format = 'f', big.mark = ',', digits = 0), ' simulations)');
 
