@@ -40,7 +40,7 @@ plot.time.series <- function(x, ggplot = TRUE, background = TRUE, print = TRUE, 
   if (!is.array(x)) { x <- matrix(x, nrow = 1) }
   n <- nrow(x);
   m <- ncol(x);
-  B < -background;
+  B <- background;
 
   #Check number of plots and prompt user if needed
   #Applies if there are more than 36 plots (6 x 6 plot matrix)
