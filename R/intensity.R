@@ -6,10 +6,10 @@
 #' to the number of values in the time-series.
 #'
 #' @param x A vector of time-series values
-#' @param centered Logical; if ```TRUE``` the time-series vector is centred (mean removed) before computing its intensity
-#' @param centred An alternative name for the ```centered``` input
-#' @param scaled Logical; if ```TRUE``` the intensity measure is scaled so that its norm is equal to the number of values in the time-series
-#' @param nyquist Logical; if ```TRUE``` the intensity vector is reduces for real time-series vectors to limit it to frequencies in the Nyquist range
+#' @param centered Logical; if \code{TRUE} the time-series vector is centred (mean removed) before computing its intensity
+#' @param centred An alternative name for the \code{centered} input
+#' @param scaled Logical; if \code{TRUE} the intensity measure is scaled so that its norm is equal to the number of values in the time-series
+#' @param nyquist Logical; if \code{TRUE} the intensity vector is reduces for real time-series vectors to limit it to frequencies in the Nyquist range
 #'
 #' @examples
 #'
