@@ -63,13 +63,13 @@ ARMA.autocov <- function(n,
 
       #Adjust ar vector and order p
       if (r > p) { ar <- c(ar, rep(0, r-p));
-      p  <- r; }
+                   p  <- r; }
 
       #Construct linear equations for ACF (A %*% ACF = b)
       AA <- c(1, -ar);
       A  <- matrix(0, nrow = p+1L, ncol = 2*p+1L);
       for (i in 1L:nrow(A)) {
-        for (k in 0L:p)       {
+      for (k in 0L:p)       {
           A[i,i+k] <- AA[k+1]; } }
       A[, 1L:p] <- A[, 1L:p] + A[, (2*p+1):(p+2)];
       A <- A[rev(1:(p+1)), rev(1:(p+1))];
@@ -84,7 +84,7 @@ ARMA.autocov <- function(n,
       ACF <- solve(A, b);
       VAR <- ACF[1];
       ACF <- ACF[-1L]/VAR; } else {
-        VAR <- 1/(1-ar);
+        VAR <- 1/(1-ar^2);
         ACF <- ar; }
 
     #Extend to required length
