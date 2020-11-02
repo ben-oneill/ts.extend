@@ -2,7 +2,7 @@
 #'
 #' This function computes a vector of output values from the auto-covariance/auto-correlation function for a stationary auto-regressive
 #' moving-average (ARMA) model.  The user specifies the vector size \code{n} and the function returns a vector of auto-covariance/
-#' auto-correlation values at all lags \code{Lag[0]}, ... , \code{Lag[n-1]}.  The function requires the model to be stationary, which means that
+#' auto-correlation values at all lags \code{Lag[0], ... , Lag[n-1]}.  The function requires the model to be stationary, which means that
 #' the vector of auto-regression coefficients must give an auto-regressive characteristic polynomial with roots outside the unit circle.
 #'
 #' @param n Positive integer giving the number of consecutive values in the time-series (output is a vector of length \code{n})
