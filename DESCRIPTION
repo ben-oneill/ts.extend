@@ -1,7 +1,7 @@
 Package: ts.extend
 Type: Package
 Title: Stationary Gaussian ARMA Processes and Other Time-Series Utilities
-Version: 0.1.0
+Version: 0.1.1
 Date: 2020-09-21
 Authors@R: person("Ben", "O'Neill", email = "ben.oneill@hotmail.com", role = c("aut", "cre"))
 Author: Ben O'Neill [aut, cre]
