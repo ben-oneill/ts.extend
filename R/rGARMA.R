@@ -95,7 +95,7 @@ rGARMA <- function(n,
     OUT[, !cond] <- mvtnorm::rmvnorm(n, mean = CMEAN, sigma = CVAR); }
 
   #Add class and labels for rows and columns
-  class(OUT)    <- 'time.series';
+  class(OUT)    <- c('time.series', class(OUT);
   rownames(OUT) <- sprintf('Series[%s]', 1:n);
   colnames(OUT) <- sprintf('Time[%s]', 1:m);
 
