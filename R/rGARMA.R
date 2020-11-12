@@ -1,14 +1,14 @@
 #' Generate random vectors from the stationary GARMA distribution
 #'
 #' This function generates random vectors from the stationary Gaussian auto-regressive moving-average (GARMA) distribution.  The user specifies
-#' the number of vectors ```n``` and their dimension ```m``` and the function returns an n x m matrix of generated time-series from the GARMA
+#' the number of vectors \code{n} and their dimension \code{m} and the function returns an $n \times m$ matrix of generated time-series from the GARMA
 #' distribution with the specified parameters.  By default the function generates from the marginal GARMA distribution, but the user may give
-#' conditional values in the ```condvals``` vector to generate from the associated conditional distribution (non-conditional values in this
-#' vector are given as ```NA```).
+#' conditional values in the \code{condvals} vector to generate from the associated conditional distribution (non-conditional values in this
+#' vector are given as \code{NA}).
 #'
 #' @param n Positive integer giving the number of random vectors to generate
 #' @param m Positive integer giving the dimension of the random vectors to generate (i.e., the number of values in each time-series)
-#' @param condvals Either a single value ```NA``` or a numeric vector with ```m``` elements; numeric entries are conditioning values for the generated vector
+#' @param condvals Either a single value \code{NA} or a numeric vector with \code{m} elements; numeric entries are conditioning values for the generated vector
 #' @param mean The mean parameter
 #' @param errorvar The error variance parameter
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
@@ -95,7 +95,7 @@ rGARMA <- function(n,
     OUT[, !cond] <- mvtnorm::rmvnorm(n, mean = CMEAN, sigma = CVAR); }
 
   #Add class and labels for rows and columns
-  class(OUT)    <- c('time.series', class(OUT);
+  class(OUT)    <- c('time.series', class(OUT));
   rownames(OUT) <- sprintf('Series[%s]', 1:n);
   colnames(OUT) <- sprintf('Time[%s]', 1:m);
 

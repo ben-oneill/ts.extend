@@ -1,14 +1,14 @@
 #' Plot of the Permutation-Spectrum Test
 #'
-#' This function generates a dual plot showing the results of the permutation-spectrum testusing either ```ggplot``` or ```base``` graphics.
-#' The user must input a test object produced by the ```spectrum.test``` function.  The function produces a dual plot showing the scaled intensity
+#' This function generates a dual plot showing the results of the permutation-spectrum testusing either \code{ggplot} or \code{base} graphics.
+#' The user must input a test object produced by the \code{spectrum.test} function.  The function produces a dual plot showing the scaled intensity
 #' of the time-series vector and the simulated null distribution of the maximum scaled intensity under the null hypothesis of an IID vector.
 #' The plots also report the value of the maximum scaled intensity and the resulting p-value for the test.  This dual plot forms a useful
 #' companion to the permutation-spectrum test; it allows the user to visualise the simulated null distribution and test statistic.
 #'
-#' @param x A ```spectrum.test``` object produced by the ```spectrum.test``` function
-#' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
-#' @param print Logical; if ```TRUE``` the scatterplot is printed
+#' @param x A \code{spectrum.test} object produced by the \code{spectrum.test} function
+#' @param ggplot Logical; if \code{TRUE} the scatterplot is a \code{ggplot} object; if \code{FALSE} it is a \code{base} plot object
+#' @param print Logical; if \code{TRUE} the scatterplot is printed
 #' @param ...   unused
 #' @examples
 #'

@@ -1,17 +1,17 @@
 #' Plot scatterplot matrix of intensity vectors
 #'
-#' This is a custom plot function that operates on objects of class ```intensity``` (which is the output generated from the ```intensity```
-#' function).  This plot function generates a scatterplot matrix of intensity vectors using either ```ggplot``` or ```base``` graphics.
-#' The user must input either a single intensity vector ```x``` or a matrix ```x``` where each row is one intensity vector.  The function
+#' This is a custom plot function that operates on objects of class \code{intensity} (which is the output generated from the \code{intensity}
+#' function).  This plot function generates a scatterplot matrix of intensity vectors using either \code{ggplot} or \code{base} graphics.
+#' The user must input either a single intensity vector \code{x} or a matrix \code{x} where each row is one intensity vector.  The function
 #' generates a scatterplot matrix showing each of the intensity barplots.  The user may choose to print or assign the object, or both.
 #' Since the function generates a scatterplot of intensity plots, there are certain limits in the output.  If the user attempts to generate
 #' the plot for a time-series matrix with more than 36 intensity vectors, the user will be prompted to continue.  The prompts can be removed
 #' in the arguments of the function.
 #'
 #' @param x A vector or matrix of intensity values (if a matrix, each intensity vector should be one row of the matrix)
-#' @param ggplot Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object
-#' @param print Logical; if ```TRUE``` the scatterplot is printed
-#' @param user.prompt Logical; if ```TRUE``` the user will be prompted for choices when the number if intensity vectors is large
+#' @param ggplot Logical; if \code{TRUE} the scatterplot is a \code{ggplot} object; if \code{FALSE} it is a \code{base} plot object
+#' @param print Logical; if \code{TRUE} the scatterplot is printed
+#' @param user.prompt Logical; if \code{TRUE} the user will be prompted for choices when the number if intensity vectors is large
 #' @param ...   unused
 #'
 #' @examples
@@ -123,4 +123,3 @@ plot.intensity <- function(x, ggplot = TRUE, print = TRUE, user.prompt = TRUE, .
   if (print) { print(PLOT); }
 
   PLOT; }
-

@@ -1,18 +1,18 @@
 #' Density function for the stationary GARMA distribution
 #'
 #' This function computes the probability density function from the stationary Gaussian auto-regressive moving-average (GARMA) distribution.
-#' The user specifies a vector ```x``` giving a single time-series vector, or a matrix ```x``` giving one time-series vector in each row, and the
+#' The user specifies a vector \code{x} giving a single time-series vector, or a matrix \code{x} giving one time-series vector in each row, and the
 #' function returns the vector of cumulative probabilities corresponding to the input time-series vectors.  By default the function generates from
-#' the marginal GARMA distribution, but the user may give conditioning indicators in the ```cond``` vector to compute the conditional density where
+#' the marginal GARMA distribution, but the user may give conditioning indicators in the \code{cond} vector to compute the conditional density where
 #' some of the elements in the input vectors are conditioning values.
 #'
 #' @param x A vector or matrix of time-series values (if a matrix, each time-series should be one row of the matrix)
-#' @param cond Either a single logical value ```FALSE``` or a logical vector with the same number of elements; as each time-series vector; each logical value indicates whether the density is conditional on the associated time-series value in ```x```.
+#' @param cond Either a single logical value \code{FALSE} or a logical vector with the same number of elements; as each time-series vector; each logical value indicates whether the density is conditional on the associated time-series value in \code{x}.
 #' @param mean The mean parameter
 #' @param errorvar The error variance parameter
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
-#' @param log Logical; if ```TRUE``` the function returns the log-density; if ```FALSE``` the function returns the density
+#' @param log Logical; if \code{TRUE} the function returns the log-density; if \code{FALSE} the function returns the density
 #'
 #' @examples
 #' data(garma)
