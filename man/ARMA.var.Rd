@@ -15,18 +15,18 @@ ARMA.var(
 \arguments{
 \item{n}{Positive integer giving the number of values in the time-series (output variance matrix is an n x n matrix)}
 
-\item{condvals}{Either a single value ```NA``` or a numeric vector with ```n``` elements; numeric entries are conditioning values for the generated vector}
+\item{condvals}{Either a single value \code{NA} or a numeric vector with \code{n} elements; numeric entries are conditioning values for the generated vector}
 
 \item{ar}{Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)}
 
 \item{ma}{Vector of moving-average coefficients}
 
-\item{corr}{Logical; if ```TRUE``` the function returns the correlation matrix; if ```FALSE``` the function returns the covariance matrix}
+\item{corr}{Logical; if \code{TRUE} the function returns the correlation matrix; if \code{FALSE} the function returns the covariance matrix}
 }
 \description{
 This function computes the covariance/correlation matrix for a stationary auto-regressive moving-average (ARMA) model.  The user specifies
-the matrix size ```n``` and the function returns a matrix of covariance/correlation values at all times ```Time[1], ... , Time[n]``` (in the
-case where conditioning values are specified using the ```condvals``` argument, only the time values for non-conditional values are included).
+the matrix size \code{n} and the function returns a matrix of covariance/correlation values at all times \code{Time[1], ... , Time[n]} (in the
+case where conditioning values are specified using the \code{condvals} argument, only the time values for non-conditional values are included).
 The function requires the model to be stationary, which means that the vector of auto-regression coefficients must give an auto-regressive
 characteristic polynomial with roots outside the unit circle.
 }

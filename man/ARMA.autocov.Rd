@@ -7,18 +7,18 @@
 ARMA.autocov(n, ar = numeric(0), ma = numeric(0), corr = FALSE)
 }
 \arguments{
-\item{n}{Positive integer giving the number of consecutive values in the time-series (output is a vector of length ```n```)}
+\item{n}{Positive integer giving the number of consecutive values in the time-series (output is a vector of length \code{n})}
 
 \item{ar}{Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)}
 
 \item{ma}{Vector of moving-average coefficients}
 
-\item{corr}{Logical; if ```TRUE``` the function returns the auto-correlation function; if ```FALSE``` the function returns the auto-covariance function}
+\item{corr}{Logical; if \code{TRUE} the function returns the auto-correlation function; if \code{FALSE} the function returns the auto-covariance function}
 }
 \description{
 This function computes a vector of output values from the auto-covariance/auto-correlation function for a stationary auto-regressive
-moving-average (ARMA) model.  The user specifies the vector size ```n``` and the function returns a vector of auto-covariance/
-auto-correlation values at all lags ```Lag[0], ... , Lag[n-1]```.  The function requires the model to be stationary, which means that
+moving-average (ARMA) model.  The user specifies the vector size \code{n} and the function returns a vector of auto-covariance/
+auto-correlation values at all lags \code{Lag[0], ... , Lag[n-1]}.  The function requires the model to be stationary, which means that
 the vector of auto-regression coefficients must give an auto-regressive characteristic polynomial with roots outside the unit circle.
 }
 \examples{

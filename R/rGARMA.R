@@ -1,7 +1,7 @@
 #' Generate random vectors from the stationary GARMA distribution
 #'
 #' This function generates random vectors from the stationary Gaussian auto-regressive moving-average (GARMA) distribution.  The user specifies
-#' the number of vectors \code{n} and their dimension \code{m} and the function returns an $n \times m$ matrix of generated time-series from the GARMA
+#' the number of vectors \code{n} and their dimension \code{m} and the function returns an n x m matrix of generated time-series from the GARMA
 #' distribution with the specified parameters.  By default the function generates from the marginal GARMA distribution, but the user may give
 #' conditional values in the \code{condvals} vector to generate from the associated conditional distribution (non-conditional values in this
 #' vector are given as \code{NA}).

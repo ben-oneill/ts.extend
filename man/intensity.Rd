@@ -15,13 +15,13 @@ intensity(
 \arguments{
 \item{x}{A vector of time-series values}
 
-\item{centered}{Logical; if ```TRUE``` the time-series vector is centred (mean removed) before computing its intensity}
+\item{centered}{Logical; if \code{TRUE} the time-series vector is centred (mean removed) before computing its intensity}
 
-\item{centred}{An alternative name for the ```centered``` input}
+\item{centred}{An alternative name for the \code{centered} input}
 
-\item{scaled}{Logical; if ```TRUE``` the intensity measure is scaled so that its norm is equal to the number of values in the time-series}
+\item{scaled}{Logical; if \code{TRUE} the intensity measure is scaled so that its norm is equal to the number of values in the time-series}
 
-\item{nyquist}{Logical; if ```TRUE``` the intensity vector is reduces for real time-series vectors to limit it to frequencies in the Nyquist range}
+\item{nyquist}{Logical; if \code{TRUE} the intensity vector is reduces for real time-series vectors to limit it to frequencies in the Nyquist range}
 }
 \description{
 This function computes the spectral intensity of a time series vector/matrix.  The user inputs the time-series vector or matrix and specifies
