@@ -16,13 +16,13 @@
 \arguments{
 \item{x}{A vector or matrix of time-series values (if a matrix, each time-series should be one row of the matrix)}
 
-\item{ggplot}{Logical; if ```TRUE``` the scatterplot is a ```ggplot``` object; if ```FALSE``` it is a ```base``` plot object}
+\item{ggplot}{Logical; if \code{TRUE} the scatterplot is a \code{ggplot} object; if \code{FALSE} it is a \code{base} plot object}
 
-\item{background}{Logical; if ```TRUE``` then each ```ggplot``` scatterplot will include background points for all the time-series vectors}
+\item{background}{Logical; if \code{TRUE} then each \code{ggplot} scatterplot will include background points for all the time-series vectors}
 
-\item{print}{Logical; if ```TRUE``` the scatterplot is printed}
+\item{print}{Logical; if \code{TRUE} the scatterplot is printed}
 
-\item{user.prompt}{Logical; if ```TRUE``` the user will be prompted for choices when the number if time-series is large}
+\item{user.prompt}{Logical; if \code{TRUE} the user will be prompted for choices when the number if time-series is large}
 
 \item{...}{unused
 
@@ -32,10 +32,10 @@ data(garma)
 plot(SERIES)}
 }
 \description{
-This is a custom plot function that operates on objects of class ```time.series``` (which is the output generated from the ```rGARMA```
-function).  This plot function generates a scatterplot matrix of time-series vectors using either ```ggplot``` or ```base``` graphics.
-The user must input either a single time-series vector ```x``` or a matrix ```x``` where each row is one time-series vector.  The function
-generates a scatterplot matrix showing each of the time-series.  If the plot is generated using ```ggplot``` graphics then the user has an
+This is a custom plot function that operates on objects of class \code{time.series} (which is the output generated from the \code{rGARMA}
+function).  This plot function generates a scatterplot matrix of time-series vectors using either \code{ggplot} or \code{base} graphics.
+The user must input either a single time-series vector \code{x} or a matrix \code{x} where each row is one time-series vector.  The function
+generates a scatterplot matrix showing each of the time-series.  If the plot is generated using \code{ggplot} graphics then the user has an
 option to include a background showing all points from all the series in grey.  The user may choose to print or assign the object, or both.
 Since the function generates a scatterplot of time-series plots, there are certain limits in the output.  If the user attempts to generate
 the plot for a time-series matrix with more than 36 time-series, the user will be prompted to continue and prompted about whether they want

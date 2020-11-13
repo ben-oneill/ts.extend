@@ -19,7 +19,7 @@ rGARMA(
 
 \item{m}{Positive integer giving the dimension of the random vectors to generate (i.e., the number of values in each time-series)}
 
-\item{condvals}{Either a single value ```NA``` or a numeric vector with ```m``` elements; numeric entries are conditioning values for the generated vector}
+\item{condvals}{Either a single value \code{NA} or a numeric vector with \code{m} elements; numeric entries are conditioning values for the generated vector}
 
 \item{mean}{The mean parameter}
 
@@ -31,10 +31,10 @@ rGARMA(
 }
 \description{
 This function generates random vectors from the stationary Gaussian auto-regressive moving-average (GARMA) distribution.  The user specifies
-the number of vectors ```n``` and their dimension ```m``` and the function returns an n x m matrix of generated time-series from the GARMA
+the number of vectors \code{n} and their dimension \code{m} and the function returns an n x m matrix of generated time-series from the GARMA
 distribution with the specified parameters.  By default the function generates from the marginal GARMA distribution, but the user may give
-conditional values in the ```condvals``` vector to generate from the associated conditional distribution (non-conditional values in this
-vector are given as ```NA```).
+conditional values in the \code{condvals} vector to generate from the associated conditional distribution (non-conditional values in this
+vector are given as \code{NA}).
 }
 \examples{
 #Set the model parameters

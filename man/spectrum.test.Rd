@@ -11,7 +11,7 @@ spectrum.test(x = NULL, sims = 10^6, progress = TRUE)
 
 \item{sims}{Positive integer for the number of simulations to perform in the test}
 
-\item{progress}{Logical; if ```TRUE``` the function uses a progress bar to track its simulations}
+\item{progress}{Logical; if \code{TRUE} the function uses a progress bar to track its simulations}
 }
 \description{
 Computes the permutation-spectrum test to detect a periodic signal in a real or complex time-series vector.  The null hypothesis for
@@ -19,12 +19,12 @@ the test is that the values in the time-series vector are independent and identi
 hypothesis is that the time-series has at least one remaining periodic signal.  The test statistic is the maximum scaled intensity
 of the observed time-series vector.  The p-value for the test is the probability of observing a maximum scaled intensity at least as
 large as the observed value under the null distribution of exchangeability.  The null distribution for the test is simulated by applying
-random permutations to the observed time-series.  The number of simulations is controlled by the ```sims``` parameter.
+random permutations to the observed time-series.  The number of simulations is controlled by the \code{sims} parameter.
 }
 \examples{
 
 data(garma)
 
 #Show the intensity of a time-series vector
-spectrum.test(SERIES1, sims=100)
+spectrum.test(SERIES1, sims = 100)
 }

@@ -6,7 +6,7 @@
 #' The function requires the model to be stationary, which means that the vector of auto-regression coefficients must give an auto-regressive
 #' characteristic polynomial with roots outside the unit circle.
 #'
-#' @param n Positive integer giving the number of values in the time-series (output variance matrix is an $n \times n$ matrix)
+#' @param n Positive integer giving the number of values in the time-series (output variance matrix is an n x n matrix)
 #' @param condvals Either a single value \code{NA} or a numeric vector with \code{n} elements; numeric entries are conditioning values for the generated vector
 #' @param ar Vector of auto-regressive coefficients (all roots of AR characteristic polynomial must be outside the unit circle)
 #' @param ma Vector of moving-average coefficients
