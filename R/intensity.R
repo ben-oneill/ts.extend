@@ -55,7 +55,7 @@ intensity <- function(x, centered = TRUE, centred = centered, scaled = TRUE, nyq
   if (nyquist) {
     if (x.type == 'real') {
       mm  <- ceiling((m+1)/2);
-      INT <- INT[, 1:mm]; } }
+      INT <- INT[, 1:mm, drop=FALSE]; } }
 
   #Convert back to vector if n = 1
   class(INT) <- c('matrix', 'intensity');
