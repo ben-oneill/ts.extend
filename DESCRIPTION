@@ -21,4 +21,4 @@ Suggests:
   gridExtra,
   mvtnorm
 URL: https://github.com/ben-oneill/ts.extend
-RoxygenNote: 7.1.1
+RoxygenNote: 7.2.1
